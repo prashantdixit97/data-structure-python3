@@ -1,0 +1,49 @@
+##################LINKED LIST##################
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+        
+    def insert(self,newNode):
+        if self.head is None:
+            self.head=newNode  ###   first node creation
+            
+        else:
+            lastNode=self.head
+            while (True):
+                if lastNode.next!=None:
+                    lastNode=lastNode.next
+                
+                else :
+                    break
+            lastNode.next=newNode
+        
+    
+    def printList(self):
+        mynode=self.head
+        if mynode is None:
+            print("no linkedlist")
+            return 0
+        while True:
+            print(mynode.data )
+            if mynode.next is None:
+                print("---------OVER----------")
+                break
+            mynode=mynode.next
+            
+node1=Node('Nehal')
+l1=LinkedList()
+l1.insert(node1)
+node2=Node('Prashant')
+l1.insert(node2)
+node3=Node('rahul')
+l1.insert(node3)
+l1.printList()
+
+
+
